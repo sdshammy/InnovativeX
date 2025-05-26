@@ -446,6 +446,23 @@
     <p>Scan this QR code to submit your idea!</p>
   </div>
 </div>
+const submitBtn = document.getElementById('submit-idea-btn');
+const qrModal = document.getElementById('qrCodeModal');
+const closeQr = document.getElementById('closeQr');
+
+submitBtn.addEventListener('click', () => {
+  qrModal.style.display = 'flex';  // Show modal when submit button clicked
+});
+
+closeQr.addEventListener('click', () => {
+  qrModal.style.display = 'none';  // Hide modal on close button click
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === qrModal) {
+    qrModal.style.display = 'none';  // Hide modal if clicked outside modal content
+  }
+});
 
 </body>
 </html>
